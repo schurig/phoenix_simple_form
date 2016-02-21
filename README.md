@@ -13,7 +13,7 @@ Simple form for phoenix does exactly that.
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed as:
+The package can be installed as:
 
   1. Add phoenix_simple_form to your list of dependencies in `mix.exs`:
 
@@ -33,7 +33,7 @@ If [available in Hex](https://hex.pm/docs/publish), the package can be installed
 
 ## Customization
 
-You can customize [styles](#styles) and [inferrers](#type_inferrers).
+You can customize [styles](#styles) and [inferrers](#type-inferrers).
 
 ### Styles
 
