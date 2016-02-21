@@ -1,6 +1,6 @@
 defmodule PhoenixSimpleForm do
   @style_module Application.get_env(:phoenix_simple_form, :style, PhoenixSimpleForm.Styles.Bootstrap4)
-  @inferer_module Application.get_env(:phoenix_simple_form, :inferer, PhoenixSimpleForm.TypeInferer)
+  @inferrer_module Application.get_env(:phoenix_simple_form, :inferer, PhoenixSimpleForm.TypeInferrer)
 
   def error_notification(changeset) do
     if changeset.action do
@@ -9,7 +9,7 @@ defmodule PhoenixSimpleForm do
   end
 
   def input(f, name, opts \\ []) do
-    type = @inferer_module.run(f, name, opts)
+    type = @inferrer_module.run(f, name, opts)
     @style_module.input(type, f, name, opts)
   end
 end

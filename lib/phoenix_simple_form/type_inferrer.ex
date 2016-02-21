@@ -1,4 +1,4 @@
-defmodule PhoenixSimpleForm.TypeInferer do
+defmodule PhoenixSimpleForm.TypeInferrer do
   def run(f, name, opts) do
     opts[:as]
     || from_parameters(opts, name)

@@ -8,12 +8,16 @@ defmodule PhoenixSimpleForm.Mixfile do
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
      package: package,
+     description: description,
      deps: deps]
   end
 
-  # Configuration for the OTP application
-  #
-  # Type "mix help compile.app" for more information
+  defp description do
+    """
+    Easier form handling for phoenix
+    """
+  end
+
   def application do
     [applications: [:logger]]
   end
