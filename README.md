@@ -51,6 +51,14 @@ Inferrers try to infer the right input type for the available data. The default 
 
 3. If nothing else matches, read the model type from the database. Then e.g. `:integer` is mapped to a number input. `:boolean` is mapped to a checkbox.
 
+If you want to customize the inferrer, add the following setting to your `config.exs`:
+
+```elixir
+config :phoenix_simple_form,
+  inferrer: YourProject.YourInferrerModule
+```
+
+
 ## Acknowlegments
 
 

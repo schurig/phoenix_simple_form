@@ -1,6 +1,6 @@
 defmodule PhoenixSimpleForm do
   @style_module Application.get_env(:phoenix_simple_form, :style, PhoenixSimpleForm.Styles.Bootstrap4)
-  @inferrer_module Application.get_env(:phoenix_simple_form, :inferer, PhoenixSimpleForm.TypeInferrer)
+  @inferrer_module Application.get_env(:phoenix_simple_form, :inferrer, PhoenixSimpleForm.TypeInferrer)
 
   def error_notification(changeset) do
     if changeset.action do

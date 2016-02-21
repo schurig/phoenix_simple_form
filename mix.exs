@@ -8,14 +8,9 @@ defmodule PhoenixSimpleForm.Mixfile do
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
      package: package,
-     description: description,
+     aliases: aliases,
+     description: "Easy form handling for phoenix",
      deps: deps]
-  end
-
-  defp description do
-    """
-    Easier form handling for phoenix
-    """
   end
 
   def application do
@@ -23,7 +18,8 @@ defmodule PhoenixSimpleForm.Mixfile do
   end
 
   defp deps do
-    [{:phoenix_html, ">= 2.4.0"}]
+    [{:phoenix_html, ">= 2.4.0"},
+     {:mix_test_watch, "~> 0.2", only: :dev}]
   end
 
   defp package do
@@ -32,5 +28,9 @@ defmodule PhoenixSimpleForm.Mixfile do
       licenses: ["MIT"],
       links: %{"GitHub" => "https://github.com/sbrink/phoenix_simple_form"}
     ]
+  end
+
+  defp aliases do
+    ["t": ["test.watch"]]
   end
 end
