@@ -33,15 +33,43 @@ If [available in Hex](https://hex.pm/docs/publish), the package can be installed
 
 ## Customization
 
-You can customize [styles](#styles) and [inferrers](#inferrers).
+You can customize [styles](#styles) and [inferrers](#type_inferrers).
 
 ### Styles
 
-The default style for phoenix_simple_form is bootstrap.
+The default style for phoenix_simple_form is bootstrap4. (Feel free to [contribute](#contribution) styles other css frameworks)
 
-TODO
+If you want to customize the style, add the following setting to your `config.exs`:
 
-### Inferrers
+```elixir
+config :phoenix_simple_form,
+  style: YourProject.YourStyle
+```
+
+Copy [this file](lib/phoenix_simple_form/styles/bootstrap4.ex) into your project. Rename the module name accordingly to your config setting.
+
+To add a new style, just create a new input function.
+
+```elixir
+def input(:custom_checkbox, f, name, opts) do
+  content_tag :div, wrapper_html(opts, %{class: "checkbox"}) do
+    [
+      label(f, name, class: "checkbox") do
+        [
+        checkbox(f, name, input_html(opts, %{})), label_translation(f, name)]
+      end,
+      error_tag(f, name)
+    ]
+  end
+end
+```
+
+You can use this by passing the as: option to an input field. E.g. `<%= input f, :admin, as: :custom_checkbox %>`.
+
+If want to use this type every time a field is named admin or ends with `_count` or whatever, you can extend the type inferrer.
+See the next section for more information.
+
+### Type Inferrers
 
 Inferrers try to infer the right input type for the available data. The default order is:
 
@@ -57,6 +85,8 @@ If you want to customize the inferrer, add the following setting to your `config
 config :phoenix_simple_form,
   inferrer: YourProject.YourInferrerModule
 ```
+
+Copy [this file](lib/phoenix_simple_form/type_inferrer.ex) into your project. Rename the module name accordingly to your config setting.
 
 
 ## Acknowlegments
