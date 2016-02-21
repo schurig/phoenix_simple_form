@@ -89,8 +89,9 @@ config :phoenix_simple_form,
 Copy [this file](lib/phoenix_simple_form/type_inferrer.ex) into your project. Rename the module name accordingly to your config setting.
 
 
-## Acknowlegments
+## Acknowledgments
 
+The project is heavily inspired by [Simple Form](https://github.com/plataformatec/simple_form) for Rails.
 
 ## Contribution
 
