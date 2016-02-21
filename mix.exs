@@ -7,6 +7,7 @@ defmodule PhoenixSimpleForm.Mixfile do
      elixir: "~> 1.2",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
+     package: package,
      deps: deps]
   end
 
@@ -27,6 +28,14 @@ defmodule PhoenixSimpleForm.Mixfile do
   #
   # Type "mix help deps" for more examples and options
   defp deps do
-    []
+    [{:phoenix_html, ">= 2.4.0"}]
+  end
+
+  defp package do
+    [
+      maintainers: ["Sascha Brink"],
+      licenses: ["MIT"],
+      links: %{"GitHub" => "https://github.com/sbrink/phoenix_simple_form"}
+    ]
   end
 end
