@@ -16,6 +16,12 @@ defmodule PhoenixSimpleForm.Styles.Bootstrap4 do
       text_input(f, name, input_html(opts, %{class: "form-control"}))
     end
   end
+  
+  def input(:datetime_input, f, name, opts) do
+    default_wrapper(f, name, opts) do
+      text_input(f, name, input_html(opts, %{class: "form-control", type: "datetime-local"}))
+    end
+  end
 
   def input(:prepend, f, name, opts) do
     default_wrapper(f, name, opts) do
